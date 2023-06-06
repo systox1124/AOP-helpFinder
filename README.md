@@ -71,9 +71,8 @@ Package Python:
 You need to complete the parameters with completed the param.py file
 You will find example file in the example_file folder
 
-python3 aophelpfinder.py param.py 
+` $ python3 aophelpfinder.py param.py` 
 
-python3 scoring.py --input (the file from aophelpfinder) --mode (event-event or stressor-event)
+`$ python3 scoring.py --input (the file from aophelpfinder) --mode (event-event or stressor-event)`
 
-Some figures are also available with the different figures scripts
-
+Some figures are also available with the different figures scripts.
