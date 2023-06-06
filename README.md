@@ -26,10 +26,10 @@ If you use AOP-helpFinder, please cite :
 
 AOP-helpFinder is a tool developed to help AOP development (Jean-Charles Carvaillo: https://github.com/jecarvaill/aop-helpFinder) (Environ Health Perspect. 2019 Apr;127(4):47005).
 
-It is based on text mining and parsing process on scientific abstracts. AOP-helpFinder allows the identification and extraction of associations between 'Prototypical stressor & event' and 'event & event' at various level of the biological organization (molecular initiating event, key event, and adverse outcome) through analysis of abstracts from the PubMed database. (https://pubmed.ncbi.nlm.nih.gov/). 
+It is based on text mining and parsing process on scientific abstracts. AOP-helpFinder allows the identification and extraction of associations between 'Prototypical stressor & event' and 'event & event' at various level of the biological organization (molecular initiating event, key event, and adverse outcome) through analysis of abstracts from the PubMed database (https://pubmed.ncbi.nlm.nih.gov/). 
 
 
-AOP-helpFinder was implemented under the H2020 Human Biomonintoring in Europe (HBM4EU) project, Work Package 13.1.
+AOP-helpFinder was implemented under the H2020 Human Biomonintoring in Europe (HBM4EU) project, Work Package 13.1.  
 HBM4EU has received funding from the European Union’s H2020 research and innovation programme under grant agreement No 733032.
 
 AOP-helpFinder is freely available at : http://aop-helpfinder-v2.u-paris-sciences.fr/
@@ -41,9 +41,9 @@ AOP-helpFinder 2.0 is a new version allowing the identification and extraction o
 
 The new version 2.0 proposes:
 1. A new module to identify event-event linkage, 
-2. A classification system (Confidence Score) to prioritize the relationships supporting the weight of evidence, 
+2. A classification system (Confidence Score) to prioritize the relationships in order to support the weight of evidence, 
 3. New visualization options for easier interpretation of the results,
-4. Interactive tables to be forwarded to the Pubmed page of articles hosting links for better data curation.
+4. Interactive tables to be forwarded to the PubMed page of articles hosting links for better data curation.
 
 For more information please read :
 * Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., Audouze, K. (2023) AOP-helpFinder 2.0: integration of an event-event searches module. Environment international. https://doi.org/10.1016/j.envint.2023.108017
@@ -68,10 +68,10 @@ Package Python:
 * pyexcel_ods3
 * pubmed_parser (http://github.com/titipata/pubmed_parser)
 
-You need to complete the parameters with completed the param.py file
+You need to complete the parameters with completed the param.py file  
 You will find example file in the example_file folder
 
-` $ python3 aophelpfinder.py param.py` 
+`$ python3 aophelpfinder.py param.py` 
 
 `$ python3 scoring.py --input (the file from aophelpfinder) --mode (event-event or stressor-event)`
 
