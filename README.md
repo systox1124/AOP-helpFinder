@@ -14,7 +14,7 @@ AOP-helpFinder is provided without any warranty. But if you have any problem ple
 # HOW TO CITE 
 If you use AOP-helpFinder, please cite :
 
-*for the method*:  
+*for the method(s)*:  
 * Carvaillo, J. C., Barouki, R., Coumoul, X., & Audouze, K. (2019). Linking Bisphenol S to Adverse Outcome Pathways Using a Combined Text Mining and Systems Biology Approach. Environmental health perspectives, 127(4), 47005. https://doi.org/10.1289/EHP4200  
 &nbsp;
 * Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., Audouze, K. (2023) AOP-helpFinder 2.0: integration of an event-event searches module. Environment international. https://doi.org/10.1016/j.envint.2023.108017
