@@ -1,12 +1,11 @@
 Authors:  
 \---------  
-Florence Jornod - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
 Thomas Jaylet - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
 Thibaut Coustillet - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
+Florence Jornod - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
 Karine Audouze - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
 
 contact: systox@parisdescartes.fr
-
 
 AOP-helpFinder is provided without any warranty. But if you have any problem please feel free to contact us by e-mail.
 
@@ -17,7 +16,7 @@ If you use AOP-helpFinder, please cite :
 *for the method(s)*:  
 * Carvaillo, J. C., Barouki, R., Coumoul, X., & Audouze, K. (2019). Linking Bisphenol S to Adverse Outcome Pathways Using a Combined Text Mining and Systems Biology Approach. Environmental health perspectives, 127(4), 47005. https://doi.org/10.1289/EHP4200  
 &nbsp;
-* Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., Audouze, K. (2023) AOP-helpFinder 2.0: integration of an event-event searches module. Environment international. https://doi.org/10.1016/j.envint.2023.108017
+* Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., & Audouze, K. (2023). AOP-helpFinder 2.0: Integration of an event-event searches module. Environment international, 177, 108017. https://doi.org/10.1016/j.envint.2023.108017
 
 *for the webserver*:
 * Jornod, F., Jaylet, T., Blaha, L., Sarigiannis, D., Tamisier, L., & Audouze, K. (2022). AOP-helpFinder webserver: a tool for comprehensive analysis of the literature to support adverse outcome pathways development. Bioinformatics (Oxford, England), 38(4), 1173–1175. https://doi.org/10.1093/bioinformatics/btab750
@@ -46,7 +45,7 @@ The new version 2.0 proposes:
 4. Interactive tables to be forwarded to the PubMed page of articles hosting links for better data curation.
 
 For more information please read :
-* Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., Audouze, K. (2023) AOP-helpFinder 2.0: integration of an event-event searches module. Environment international. https://doi.org/10.1016/j.envint.2023.108017
+* Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., & Audouze, K. (2023). AOP-helpFinder 2.0: Integration of an event-event searches module. Environment international, 177, 108017. https://doi.org/10.1016/j.envint.2023.108017
 
 # LICENCE 
 This software is governed by the CeCILL license under French law and abiding by the rules of distribution of free software.  You can  use,  modify and/ or redistribute the software under the terms of the CeCILL license as circulated by CEA, CNRS and INRIA at the following URL
