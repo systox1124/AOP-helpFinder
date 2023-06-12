@@ -222,15 +222,21 @@ def coloring_csv(file_name):
     ws_info.write("H5", "Jornod F, Jaylet T, Blaha L, Sarigiannis D, Tamisier L, Audouze K. AOP-helpFinder webserver: a tool for comprehensive analysis of the literature to support adverse outcome pathways development. Bioinformatics. 2021 oct 30.", myriad12)
     ws_info.write_url("Q5", "https://doi.org/10.1093/bioinformatics/btab750", url_format)
     
-    ws_info.write("F6", "How to cite the AOP-helpFinder method:", bold12)
+    ws_info.write("F6", "How to cite the AOP-helpFinder original method:", bold12)
     ws_info.write("H6", "Carvaillo JC, Barouki R, Coumoul X, Audouze K. Linking Bisphenol S to Adverse Outcome Pathways Using a Combined Text Mining and Systems Biology Approach. Environ Health Perspect. 2019 Apr;127(4):47005.", myriad12)
     ws_info.write_url("Q6", "https://doi.org/10.1289/EHP4200", url_format)
     
-    ws_info.write("F8", "Our website:", bold12c)
-    ws_info.write_url("G8", "https://systox.u-paris-sciences.fr/", url_format)
+    ws_info.write("F7", "How to cite the AOP-helpFinder v2.0:", bold12)
+    ws_info.write("H7", "Jaylet T, Coustillet T, Jornod F, Margaritte-Jeannin P, Audouze K. AOP-helpFinder 2.0: Integration of an event-event searches module. Environ Int. 2023;177:108017.", myriad12)
+    ws_info.write_url("Q7", "https://doi.org/10.1016/j.envint.2023.108017", url_format)
     
-    ws_info.write("F9", "AOP-helpFinder web server:", bold12c)
-    ws_info.write_url("G9", "http://aop-helpfinder.u-paris-sciences.fr", url_format)
+    ws_info.write("F9", "Our website:", bold12c)
+    ws_info.write_url("G9", "https://systox.u-paris-sciences.fr/", url_format)
+    
+    ws_info.write("F10", "AOP-helpFinder web server:", bold12c)
+    ws_info.write_url("G10", "http://aop-helpfinder.u-paris-sciences.fr", url_format)
+    
+    
     
     writer.save()
     return None
