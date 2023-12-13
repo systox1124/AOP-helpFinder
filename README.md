@@ -20,6 +20,7 @@ If you use AOP-helpFinder, please cite :
 
 *for the webserver*:
 * Jornod, F., Jaylet, T., Blaha, L., Sarigiannis, D., Tamisier, L., & Audouze, K. (2022). AOP-helpFinder webserver: a tool for comprehensive analysis of the literature to support adverse outcome pathways development. Bioinformatics (Oxford, England), 38(4), 1173–1175. https://doi.org/10.1093/bioinformatics/btab750
+* Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., & Audouze, K. (2023). AOP-helpFinder 2.0: Integration of an event-event searches module. Environment international, 177, 108017. https://doi.org/10.1016/j.envint.2023.108017
 
 # WHAT IS AOP-helpFinder ? 
 
