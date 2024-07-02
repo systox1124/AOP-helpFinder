@@ -29,8 +29,9 @@ AOP-helpFinder is a tool developed to help AOP development (Jean-Charles Carvail
 It is based on text mining and parsing process on scientific abstracts. AOP-helpFinder allows the identification and extraction of associations between 'Prototypical stressor & event' and 'event & event' at various level of the biological organization (molecular initiating event, key event, and adverse outcome) through analysis of abstracts from the PubMed database (https://pubmed.ncbi.nlm.nih.gov/). 
 
 
-AOP-helpFinder was implemented under the H2020 Human Biomonintoring in Europe (HBM4EU) project, Work Package 13.1.  
-HBM4EU has received funding from the European Union’s H2020 research and innovation programme under grant agreement No 733032.
+AOP-helpFinder was implemented under the European HBM4EU, OBERON, RADONORM and PARC projects
+The HBM4EU, OBERON and RadonNorm projects have received funding from the European Union's Horizon 2020 research and innovation programme, under grant agreement No 733032, 825712, and 900009. The RadoNorm project from the Euratom programme 2019-2020 under grant agreement No 733032, 825712, 101057014, 900009. The PARC projet has received funding from the European Union's Horizon Europe framework under the gratn agreement 101057014.
+
 
 AOP-helpFinder is freely available at : http://aop-helpfinder-v2.u-paris-sciences.fr/
 
