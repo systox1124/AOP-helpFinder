@@ -33,6 +33,7 @@ def output_writing(dict_abstracts, output_name, research_mode, output_type):
     """
     output_file = output_name + ".tsv"
     tsv_format(dict_abstracts, output_file, research_mode, output_type)
+   # tsv_format_EWS(dict_abstracts, output_file, research_mode, output_type) # !!!!ONLY FOR stressor-event - created for EWS!!!!
     if "txt" in output_type:
         output_file = output_name + ".txt"
         txt_format(dict_abstracts, output_file, research_mode, output_type)
@@ -48,7 +49,7 @@ def abst_info(abstract):
             'title' : "NA",
             'pmid' : "NA",
             'pubdate' : "NA",
-            'abstract' : "NA",
+            'abstract' : "NA"
             }
     if 'title' in abstract : dico_attribute['title'] = abstract['title']
     if 'pmid' in abstract : dico_attribute['pmid'] = abstract['pmid']
@@ -56,6 +57,8 @@ def abst_info(abstract):
     if 'abstract' in abstract : dico_attribute['abstract'] = " ".join(abstract['abstract'].split('\n'))
     return dico_attribute
 
+
+#Original version (work for event-event and stressor-event)
 #-------------------------------------------------------------------------------
 def tsv_format(dict_abstracts, output_file, research_mode, output_type):
     """
@@ -65,7 +68,7 @@ def tsv_format(dict_abstracts, output_file, research_mode, output_type):
     df = {
             'title' : [],
             'pmid' : [],
-            'pubdate' : [],
+            'date' : [],
             'abstract' : [],
         }
     ### Research mode specificity
@@ -81,7 +84,7 @@ def tsv_format(dict_abstracts, output_file, research_mode, output_type):
             for event, event_values in abstract['score'].items():
                 df['title'].append(abst_attribute['title'])
                 df['pmid'].append(abst_attribute['pmid'])
-                df['pubdate'].append(abst_attribute['pubdate'])
+                df['date'].append(abst_attribute['pubdate'])
                 df['abstract'].append(abst_attribute['abstract'])
                 if research_mode == "stressor-event":
                     df["event"].append(event)
@@ -93,23 +96,19 @@ def tsv_format(dict_abstracts, output_file, research_mode, output_type):
     df_output = pd.DataFrame(df)
     ### Modality according to output type and research mode
     if research_mode == "stressor-event":
-        if output_type == "tsv_abstracts" : df_output = df_output[["pubdate", "title", "pmid", "event", "abstract"]]
-        else : df_output = df_output[["pubdate", "title", "pmid", "event"]]
+        if output_type == "tsv_abstracts" : df_output = df_output[["date", "title", "pmid", "event", "abstract"]]
+        else : df_output = df_output[["date", "title", "pmid", "event"]]
     if research_mode == "event-event":
-        if output_type == "tsv_abstracts" : df_output = df_output[["pubdate", "title", "pmid", "event_1", "event_2", "abstract"]]
-        else : df_output = df_output[["pubdate", "title", "pmid", "event_1", "event_2"]]
+        if output_type == "tsv_abstracts" : df_output = df_output[["date", "title", "pmid", "event_1", "event_2", "abstract"]]
+        else : df_output = df_output[["date", "title", "pmid", "event_1", "event_2"]]
     ### Writting
     print("\nOutput:\n")
     print(df_output)
-    # if(df_output.empty):
-    #    noresultfile=open("no-results.txt","w")
-    #    noresultfile.write("no results \n")
-    # else:
-    df_output.to_csv(output_file, sep = '\t', index=False, header = True)
-        
+    df_output.to_csv(output_file, sep = '\t', mode='a', index=False, header = True)
     return
 
 
+#Original version (work for event-event and stressor-event)
 #-------------------------------------------------------------------------------
 def txt_format(dict_abstracts, output_file, research_mode, output_type):
     """
@@ -139,4 +138,58 @@ def txt_format(dict_abstracts, output_file, research_mode, output_type):
                         event_list = event_list + event + ", "
                 info_abst = "{}\n{}\n{}\n{}\n{}\n\n --------------------------------------- \n\n".format(abst_date, abst_title, abst_id, event_list, abst)
                 txt_output.write(info_abst)
+    return
+
+
+
+#Version for EWS + AOP-Wiki (only work for stressor-event)
+#-------------------------------------------------------------------------------
+def tsv_format_EWS(dict_abstracts, output_file, research_mode, output_type):
+    """
+    Prepare output when the requested output type is "tsv" or "tsv_abstract"
+    """
+    #
+    df = {
+            'title' : [],
+            'pmid' : [],
+            'pubdate' : [],
+            'abstract' : [],
+            'sentence' : [],
+            'localisation' : [],
+            'words_find' : [],
+            'total_words' : [],
+            'aophf_score' : []
+        }
+    df["event"] = []
+    ### Data filling
+    for abstract in dict_abstracts:
+        if 'score' in abstract:
+            abst_attribute = abst_info(abstract)
+            for event, event_values in abstract['score'].items():
+                nb_sentence = len(event_values['sentence'])
+                for i in range(nb_sentence): #d
+                    df['title'].append(abst_attribute['title'])
+                    df['pmid'].append(abst_attribute['pmid'])
+                    df['pubdate'].append(abst_attribute['pubdate'])
+                    df['abstract'].append(abst_attribute['abstract'])
+                    df['sentence'].append(event_values['sentence'][i])
+                    df['localisation'].append(event_values['localisation'][i])
+                    df['words_find'].append(event_values['words_found'][i])
+                    df['total_words'].append(event_values['words_to_find'])
+                    df['aophf_score'].append(event_values['multiscore'][i])
+                    df["event"].append(event)
+    ### Transform to pandas
+    df_output = pd.DataFrame(df)
+    ### Modality according to output type and research mode
+    if output_type == "tsv_abstracts" : df_output = df_output[["pubdate", "title", "pmid", "event", "abstract","localisation", "sentence", "words_find", "total_words", "aophf_score"]]
+    else : df_output = df_output[["pubdate", "title", "pmid", "event","localisation", "sentence", "words_find", "total_words", "aophf_score"]]
+    ### Writting
+    print("\nOutput:\n")
+    print(df_output)
+    # if(df_output.empty):
+    #    noresultfile=open("no-results.txt","w")
+    #    noresultfile.write("no results \n")
+    # else:
+    df_output.to_csv(output_file, sep = '\t', index=False, header = True)
+        
     return

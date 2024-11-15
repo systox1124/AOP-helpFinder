@@ -39,6 +39,8 @@ def create_collection_event(events_file, events_type):
     if events_type == "homemade_synonym":
         list_events = get_collection_event_homemade_synonym(events_file)
     list_events=cleaning_event_list(list_events)
+    for element in list_events:
+        element['name'].sort()
     return list_events
 
 
@@ -110,13 +112,8 @@ def cleaning_event_list(dico_event):
 #-------------------------------------------------------------------------------
 #Function test regardless of AOPhF
 """
-test = create_collection_event("event.txt", "homemade", lemma = False)
-print("\nBefore cleaning: \n",test)
-test = cleaning_event_list(test)
-print("\nAfter cleaning: \n",test)
-
-test = create_collection_event("event.txt", "homemade_synonym", lemma = False)
-print("\nBefore cleaning: \n",test)
-test = cleaning_event_list(test)
-print("\nAfter cleaning: \n",test)
+test = create_collection_event("/home/tjaylet/AOP-hF/input/event.txt", "homemade")
+print(test)
+test = create_collection_event("/home/tjaylet/AOP-hF/input/event.txt", "homemade_synonym")
+print(test)
 """

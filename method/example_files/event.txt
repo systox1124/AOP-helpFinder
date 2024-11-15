@@ -1,7 +1,0 @@
-Activation AhR
-Activation CYP1A2
-Induction CYP1A2
-Uroporphyrinogen oxidation 
-Inhibition uroporphyrinogen decarboxylase
-Highly carboxylated porphyrins accumulation 
-Uroporphyria

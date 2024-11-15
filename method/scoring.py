@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-#authors: Thomas Jaylet - Université de Paris - France
-#         Karine Audouze - Université de Paris - France
+# -*- coding: utf-8 -*-
+#authors: Thomas Jaylet - Université Paris Cité - France
+#         Karine Audouze - Université Paris Cité - France
 
 #contact: systox@paris-descartes.fr
 
@@ -20,10 +21,7 @@
 
 #This software is governed by the CeCILL license under French law and abiding by the rules of distribution of free software.  You can  use,  modify and/ or redistribute the software under the terms of the CeCILL license as circulated by CEA, CNRS and INRIA at the following URL
 
-#http://cecill.info/licences/Licence_CeCILL_V2.1-en.txt
-
-#-------------------------------------------
-
+# http://cecill.info/licences/Licence_CeCILL_V2.1-en.txt
 
 from Bio import Entrez
 import os
@@ -35,6 +33,7 @@ from pyexcel_ods3 import save_data
 from pyexcel_ods3 import get_data
 from collections import OrderedDict
 import argparse
+import time
 Entrez.email = "example@example.org"
 #nb_pubmed_article =  33000000
 alpha = 0.05
@@ -105,7 +104,7 @@ if mode == "stressor-event":
         for event in dico_article_stressor[stressor]["link"]:
             ### PubMed request
             ev_name, link = list(event.items())[0]
-            query = ev_name.replace(";", "OR")
+            query = ev_name.replace("|", "OR")
             #handle = Entrez.esearch(db="pubmed", term=query.replace(" ","+"))
             for x in range(Retries):
                 try:
@@ -133,6 +132,7 @@ if mode == "stressor-event":
             oddsratio, pvalue = stats.fisher_exact(df.to_numpy(), alternative="greater")
             dico_stressor["fisher_table"] = df
             dico_stressor["pvalue"] = format(pvalue, ".3e")
+            print(dico_stressor["fisher_table"])
             dico_article_stressor[stressor]["first_test"] = dico_stressor
 
             ### Calculation Fisher 2
@@ -157,6 +157,37 @@ if mode == "stressor-event":
             res_liste.append(link)
             res_liste.append(dico_article_stressor[stressor]["first_test"]["pvalue"])
             res_liste.append(dico_article_stressor[stressor]["p_var"])
+
+            if dico_article_stressor[stressor]["p_var"] == "NA":
+                if link > 999:
+                    res_liste.append("Very High") 
+                elif link > 99:
+                    res_liste.append("High")
+                else:
+                    res_liste.append("Low")
+            elif float(dico_article_stressor[stressor]["p_var"]) >= 5e-02:
+                if link > 999:
+                    res_liste.append("Very High") 
+                elif link > 99:
+                    res_liste.append("High")
+                else:
+                    res_liste.append("Quite low")
+            elif 1e-03 <= float(dico_article_stressor[stressor]["p_var"]) < 5e-02:
+                if link > 999:
+                    res_liste.append("Very High") 
+                elif link > 99:
+                    res_liste.append("High")
+                else:
+                    res_liste.append("Moderate")
+            elif 1e-05 <= float(dico_article_stressor[stressor]["p_var"]) < 1e-03:
+                if link > 999:
+                    res_liste.append("Very High") 
+                else:
+                    res_liste.append("High")
+            elif float(dico_article_stressor[stressor]["p_var"]) < 1e-05:
+                res_liste.append("Very High")
+
+            """
             if (dico_article_stressor[stressor]["p_var"] == "NA"):
                 res_liste.append("Low")
             elif float(dico_article_stressor[stressor]["p_var"]) >= 5e-02:
@@ -167,6 +198,7 @@ if mode == "stressor-event":
                 res_liste.append("High")
             elif float(dico_article_stressor[stressor]["p_var"]) < 1e-05:
                 res_liste.append("Very High")
+            """
 
             print(res_liste)
             res_ods.append(res_liste)
@@ -203,7 +235,7 @@ if mode == "event-event":
         Event_1 = row["event_1"]
         Event_2 = row["event_2"]
         ### PubMed query
-        query_ev1 = Event_1.replace(";" , "OR")
+        query_ev1 = Event_1.replace("|" , "OR")
         for x in range(Retries):
             try:
                 handle_ev1 = Entrez.esearch(db="pubmed", term=query_ev1)
@@ -214,7 +246,7 @@ if mode == "event-event":
                 time.sleep(5)
             else :
                 break
-        query_ev2 = Event_2.replace(";" , "OR")
+        query_ev2 = Event_2.replace("|" , "OR")
         for x in range(Retries):
             try:
                 handle_ev2 = Entrez.esearch(db="pubmed", term=query_ev2)
@@ -288,7 +320,8 @@ if mode == "event-event":
         res_liste.append(nb_ev1_ev2)
         res_liste.append(str(dico_article_event[pair]["first_test"]["pvalue"]))
         res_liste.append(str(dico_article_event[pair]["p_var"]))
-
+        
+        """
         if dico_article_event[pair]["p_var"] == "NA":
             res_liste.append("Low")
         elif float(dico_article_event[pair]["p_var"]) >= 5e-02:
@@ -299,8 +332,37 @@ if mode == "event-event":
             res_liste.append("High")
         elif float(dico_article_event[pair]["p_var"]) < 1e-05:
             res_liste.append("Very High")
+        """
+         
+        if dico_article_event[pair]["p_var"] == "NA":
+            if nb_ev1_ev2 > 999:
+                res_liste.append("Very High") 
+            elif nb_ev1_ev2 > 99:
+                res_liste.append("High")
+            else:
+                res_liste.append("Low")
+        elif float(dico_article_event[pair]["p_var"]) >= 5e-02:
+            if nb_ev1_ev2 > 999:
+                res_liste.append("Very High") 
+            elif nb_ev1_ev2 > 99:
+                res_liste.append("High")
+            else:
+                res_liste.append("Quite low")
+        elif 1e-03 <= float(dico_article_event[pair]["p_var"]) < 5e-02:
+            if nb_ev1_ev2 > 999:
+                res_liste.append("Very High") 
+            elif nb_ev1_ev2 > 99:
+                res_liste.append("High")
+            else:
+                res_liste.append("Moderate")
+        elif 1e-05 <= float(dico_article_event[pair]["p_var"]) < 1e-03:
+            if nb_ev1_ev2 > 999:
+                res_liste.append("Very High") 
+            else:
+                res_liste.append("High")
+        elif float(dico_article_event[pair]["p_var"]) < 1e-05:
+            res_liste.append("Very High")
 
-        print(res_liste)
         res_ods.append(res_liste)
 
 
@@ -312,3 +374,4 @@ if mode == "event-event":
     with open("scoring_event-event.tsv", "w") as output_csv:
         for element in res_ods:
             output_csv.write("{}\t{}\t{}\t{}\t{}\t{}\n".format(element[0],element[1],element[2],element[3],element[4],element[5]))
+

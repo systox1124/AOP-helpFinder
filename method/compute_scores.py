@@ -57,6 +57,7 @@ def compute_scores_stressor_event(abstract, events, ratio_intro):
     abstract_raw_without_neg = tm.remove_negative_sentences(abstract["abstract"])
     abstract_raw_in_sentences = sent_tokenize(abstract["abstract"])
     dico={}
+
     for event in events:
         score = []
         words_found = []
@@ -68,21 +69,21 @@ def compute_scores_stressor_event(abstract, events, ratio_intro):
                 localisation, ratio_localisation = real_localisation(abstract_raw_in_sentences, sentence)
                 score, localisation, sentence, words_found, ratio_localisation = check_position(score, localisation, sentence, words_found, ratio_localisation, ratio_intro)
                 if(score):
-                    name = "; ".join(event["name"])
+                    name = " | ".join(event["name"])
                     if name in dico :
                         for i in range(len(sentence)):
                             if sentence[i] not in dico[name]["sentence"]:
                                 dico[name]["multiscore"].append(score[i])
                                 dico[name]["localisation"].append(localisation[i])
                                 dico[name]["sentence"].append(sentence[i])
-                                #dico[name]["words_found"].append(words_found[i])
+                                dico[name]["words_found"].append(words_found[i]) #d
                     else :
                         dico[name]={}
                         dico[name]["multiscore"]=score
                         dico[name]["localisation"]=localisation
                         dico[name]["sentence"]=sentence
-                        #dico[name]["words_to_find"]=len(synonym.split())
-                        #dico[name]["words_found"]= words_found
+                        dico[name]["words_to_find"]=len(synonym.split()) #d
+                        dico[name]["words_found"]= words_found #d
     return(dico)
 
 ################################################################################
@@ -124,18 +125,18 @@ def compute_scores_event_event(abstract, events, ratio_intro):
                                 score_i_update = [score_i[x] for x in index_j]
                                 cooc_multiscore = [score_i_update, score_j]
                                 words_found_i_update = [words_found_i[x] for x in index_j]
-                                cooc_wfound = [words_found_i_update, words_found_j]
+                                #cooc_wfound = [words_found_i_update, words_found_j]
                                 cooc_sentence = [sentence[x] for x in index_j]
                                 cooc_loca = [localisation[x] for x in index_j]
                                 if (score_i_update and score_j):
-                                    name = "{} with {}".format("; ".join(events[i]["name"]), "; ".join(events[j]["name"]))
+                                    name = "{} with {}".format(" | ".join(events[i]["name"]), " | ".join(events[j]["name"]))
                                     if name in dico:
                                         for s in range(len(cooc_sentence)):
                                             if cooc_sentence[s] not in dico[name]["sentence"]:
                                                 dico[name]["multiscore"][0].append(cooc_multiscore[0][s])
                                                 dico[name]["multiscore"][1].append(cooc_multiscore[1][s])
-                                                #dico[name]["cooc_wfound"][0].append(cooc_multiscore[0][s])
-                                                #dico[name]["cooc_wfound"][1].append(cooc_multiscore[1][s])
+                                                #dico[name]["cooc_wfound"][0].append(cooc_multiscore[0][s]) #d
+                                                #dico[name]["cooc_wfound"][1].append(cooc_multiscore[1][s]) #d
                                                 dico[name]["localisation"].append(cooc_loca[s])
                                                 dico[name]["sentence"].append(cooc_sentence[s])
                                     else :
@@ -143,8 +144,8 @@ def compute_scores_event_event(abstract, events, ratio_intro):
                                         dico[name]["multiscore"]=cooc_multiscore
                                         dico[name]["localisation"]=cooc_loca
                                         dico[name]["sentence"]=cooc_sentence
-                                        #dico[name]["words_to_find"]=[[len(synonym_i.split())], [len(synonym_j.split())]]
-                                        #dico[name]["words_found"]= cooc_wfound
+                                        dico[name]["words_to_find"]=[[len(synonym_i.split())], [len(synonym_j.split())]] #d
+                                        #dico[name]["words_found"]= cooc_wfound #d
     #print(dico)
     return dico
 

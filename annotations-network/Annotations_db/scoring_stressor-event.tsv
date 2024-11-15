@@ -1,0 +1,22 @@
+Stressor	Event	Article	Link	Pvalue	pvar	Confidence
+Cigarette smoke	Lung cancer	83707	4015	0.000e+00	0.000e+00	Very High
+Cigarette smoke	Oxidative Stress	83707	2323	0.000e+00	0.000e+00	Very High
+Cigarette smoke	Apoptosis	83707	1312	1.044e-01	NA	Low
+Cigarette smoke	Mutation	83707	943	1.000e+00	NA	Low
+Cigarette smoke	Increase of reactive oxygen species	83707	889	2.690e-137	4.426e-137	Very High
+Cigarette smoke	Oxidative DNA damage	83707	199	1.000e+00	NA	Low
+Cigarette smoke	Cell injury	83707	185	1.000e+00	NA	Low
+Cigarette smoke	Altered gene expression	83707	131	1.000e+00	NA	Low
+Cigarette smoke	Activation of AhR	83707	77	1.107e-23	3.406e-23	Very High
+Cigarette smoke	Increase of bulky DNA adducts	83707	68	2.200e-114	2.319e-112	Very High
+Cigarette smoke	Induction of CYP1A2	83707	15	5.671e-06	1.841e-05	High
+Cigarette smoke	Deposition of Energy	83707	3	1.000e+00	NA	Low
+Radon	Lung cancer	9591	1297	0.000e+00	0.000e+00	Very High
+Radon	Mutation	9591	112	1.000e+00	NA	Low
+Radon	Deposition of Energy	9591	38	7.329e-14	2.609e-13	Very High
+Radon	Oxidative Stress	9591	30	1.000e+00	NA	Low
+Radon	Apoptosis	9591	25	1.000e+00	NA	Low
+Radon	Increase of reactive oxygen species	9591	23	9.976e-01	NA	Low
+Radon	Oxidative DNA damage	9591	8	1.000e+00	NA	Low
+Radon	Altered gene expression	9591	3	1.000e+00	NA	Low
+Radon	Cell injury	9591	2	1.000e+00	NA	Low

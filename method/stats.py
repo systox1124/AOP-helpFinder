@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # -*- coding: utf-8 -*-
-#authors: Florence Jornod - INSERM UMRS 1124
-#         Thomas Jaylet - Université Paris Cité - France
+#authors: Thomas Jaylet - Université Paris Cité - France
 #         Karine Audouze - Université Paris Cité - France
 
 #contact: systox@paris-descartes.fr
@@ -90,6 +89,7 @@ if mode =="stressor-event":
         # df which will be used for scoring
         df_for_scoring = pd.DataFrame(columns=['stressor','nb_traited_AOPhf','event','link'])
         for ev, link in ev_links.iteritems():
+        #for ev, link in ev_links.items():
             new_row = {'stressor':stressor_name, 'nb_traited_AOPhf':total_abs, 'event':ev, 'link':link}
             df_for_scoring = df_for_scoring.append(new_row, ignore_index=True)
             resume.write("{}\t{}\n".format(ev,link))

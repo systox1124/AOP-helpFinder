@@ -44,7 +44,15 @@ spec.loader.exec_module(param)
 #-------------------------------------------
 
 chem_name = param.abstracts_file.split(".")[0].replace("-"," ")
-dict_abstracts = getabs.get_abstracts_from_file(param.abstracts_file, param.abstracts_type)
+try:
+    dict_abstracts = getabs.get_abstracts_from_file(param.abstracts_file, param.abstracts_type)
+except:
+    dict_abstracts = {}
+    stats_file =open(param.stats_file,"a")
+    stats_file.write(str(len(dict_abstracts))+"\n")
+    cout.output_writing(dict_abstracts, param.output_name, param.search_mode, param.outputtype)
+    exit()
+
 list_events = ev.create_collection_event(param.events_file, param.events_type)
 print("\nListe d'events:\n",list_events)
 print(len(dict_abstracts))
@@ -57,8 +65,10 @@ stats_file.write(str(len(dict_abstracts))+"\n")
 
 #-------------------------------------------
 for abstract in dict_abstracts:
+    #print(abstract)
     score = cscores.compute_scores(abstract,list_events,param.intro, param.search_mode)
     if score:
+        print("score")
         abstract['score']=score
 #print(dict_abstracts)
 #-------------------------------------------

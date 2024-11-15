@@ -6,9 +6,9 @@
 ######################################
 
 # Text Mining Module
-# Coded by Jean-Charles Carvaillo, Florence Jornod, Thomas Jaylet, Karine Audouze
+# Coded by Jean-Charles Carvaillo
 
-#contact: systox@parisdescartes.fr
+#contact: systox@paris-descartes.fr
 
 
 #AOP-helpFinder is provided without any warranty. But if you have any probleme please feel free to contact us by mail.
