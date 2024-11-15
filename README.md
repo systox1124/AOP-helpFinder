@@ -1,5 +1,6 @@
-Authors:  
-\---------  
+# AOP-helpFinder 3.0
+
+## Authors:   
 Thomas Jaylet - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
 Florence Jornod - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France 
 Quentin Capdet - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France
@@ -11,7 +12,7 @@ contact: systox@parisdescartes.fr
 AOP-helpFinder 3.0 is provided without any warranty. But if you have any problem please feel free to contact us by e-mail.
 
 
-# HOW TO CITE 
+## HOW TO CITE 
 If you use AOP-helpFinder, please cite :
 
 *for the method(s)*:  
@@ -24,7 +25,7 @@ If you use AOP-helpFinder, please cite :
 * Jaylet, T., Coustillet, T., Jornod, F., Margaritte-Jeannin, P., & Audouze, K. (2023). AOP-helpFinder 2.0: Integration of an event-event searches module. Environment international, 177, 108017. https://doi.org/10.1016/j.envint.2023.108017
 
 
-# WHAT IS AOP-helpFinder ? 
+## WHAT IS AOP-helpFinder ? 
 
 AOP-helpFinder is a tool developed to help AOP development (Jean-Charles Carvaillo: https://github.com/systox1124/aop-helpFinder) (Environ Health Perspect. 2019 Apr;127(4):47005).
 
@@ -46,11 +47,11 @@ AOP-helpFinder is freely available at : http://aop-helpfinder-v3.u-paris-science
 
 
 
-#  WHAT IS AOP-helpFinder 3.0 ? 
+##  WHAT IS AOP-helpFinder 3.0 ? 
 With the new version of AOP-helpFinder you can visualize you results as an annotated network. You will have the annotations from 8 databases : AOP-wiki, HPA, KEGG, Wikipathways, REACTOME, uniprot, DisGeNET, DISEASES.
 
 
-# LICENCE 
+## LICENCE 
 This software is governed by the CeCILL license under French law and abiding by the rules of distribution of free software.  You can  use,  modify and/ or redistribute the software under the terms of the CeCILL license as circulated by CEA, CNRS and INRIA at the following URL
 
 http://cecill.info/licences/Licence_CeCILL_V2.1-en.txt
@@ -58,7 +59,7 @@ http://cecill.info/licences/Licence_CeCILL_V2.1-en.txt
 AOP-helpFinder figures are governed by CC-by-nc license
 
 
-# How To Use 
+## How To Use 
 
 require for AOP-helpFinder
 Package Python:
