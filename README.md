@@ -13,7 +13,10 @@ AOP-helpFinder 3.0 is provided without any warranty. But if you have any problem
 
 
 ## HOW TO CITE 
-If you use AOP-helpFinder, please cite :
+If you use AOP-helpFinder V3.0, please cite :
+BIORXIV/2025/648318. AOP-helpFinder 3.0: from text mining to network visualization of key event relationships, and knowledge integration from multi-sources. Thomas Jaylet, Florence Jornod, Quentin Capdet, Olivier Armant, and Karine Audouze*
+
+*Corresponding author: Karine Audouze (Email: karine.audouze [at] u-paris.fr)
 
 *for the method(s)*:  
 * Carvaillo, J. C., Barouki, R., Coumoul, X., & Audouze, K. (2019). Linking Bisphenol S to Adverse Outcome Pathways Using a Combined Text Mining and Systems Biology Approach. Environmental health perspectives, 127(4), 47005. https://doi.org/10.1289/EHP4200  
