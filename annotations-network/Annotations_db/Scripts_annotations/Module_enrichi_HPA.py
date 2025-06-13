@@ -24,6 +24,12 @@
 
 # http://cecill.info/licences/Licence_CeCILL_V2.1-en.txt
 
+# ------ KEGG ------------------------------
+
+# Note: This script uses the KEGGREST package to acces KEGG database resources.
+# Usage of KEGG data requires permission from the KEGG database (hhtps://www.kegg.jp/).
+# Please ensure compliance with KEGG's terms of use.
+
 # Libraries
 
 import sys
