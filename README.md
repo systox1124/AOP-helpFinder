@@ -61,6 +61,10 @@ http://cecill.info/licences/Licence_CeCILL_V2.1-en.txt
 
 AOP-helpFinder figures are governed by CC-by-nc license
 
+## KEGG
+This project use data retrieved via KEGGREST package from the KEGG database.
+As per KEGG's policy, usage of their data requires permission.
+Please refer to: https://wwww.kegg.jp/kegg/legal.html
 
 ## How To Use 
 
