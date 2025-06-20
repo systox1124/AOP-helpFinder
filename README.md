@@ -1,20 +1,21 @@
 # AOP-helpFinder 3.0
 
 ## Authors:   
-Thomas Jaylet - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
-Florence Jornod - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France 
-Quentin Capdet - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France
-Thibaut Coustillet - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
-Karine Audouze - Université Paris Cité, T3S, INSERM UMR-S 1124, Paris, France  
+Thomas Jaylet - Université Paris Cité, HealthFex, Inserm 1124, SysTox, Paris, France  
+Florence Jornod - Université Paris Cité, HealthFex, Inserm 1124, SysTox, Paris, France 
+Quentin Capdet - Université Paris Cité, THealthFex, Inserm 1124, SysTox, Paris, France
+Thibaut Coustillet - Université Paris Cité, HealthFex, Inserm 1124, SysTox, Paris, France  
+Karine Audouze - Université Paris Cité, THealthFex, Inserm 1124, SysTox, Paris, France  
 
 contact: systox@parisdescartes.fr
 
 AOP-helpFinder 3.0 is provided without any warranty. But if you have any problem please feel free to contact us by e-mail.
 
+Availability on Zenodo 10.5281/zenodo.15193935
 
 ## HOW TO CITE 
 If you use AOP-helpFinder V3.0, please cite :
-BIORXIV/2025/648318. AOP-helpFinder 3.0: from text mining to network visualization of key event relationships, and knowledge integration from multi-sources. Thomas Jaylet, Florence Jornod, Quentin Capdet, Olivier Armant, and Karine Audouze*
+BIORXIV/2025/648318. AOP-helpFinder 3.0: from text mining to network visualization of key event relationships, and knowledge integration from multiple sources. Thomas Jaylet, Florence Jornod, Quentin Capdet, Olivier Armant, and Karine Audouze*
 
 *Corresponding author: Karine Audouze (Email: karine.audouze [at] u-paris.fr)
 
