@@ -15,8 +15,7 @@ Availability on Zenodo 10.5281/zenodo.15193935
 
 ## HOW TO CITE 
 If you use AOP-helpFinder V3.0, please cite :
-BIORXIV/2025/648318. AOP-helpFinder 3.0: from text mining to network visualization of key event relationships, and knowledge integration from multiple sources. Thomas Jaylet, Florence Jornod, Quentin Capdet, Olivier Armant, and Karine Audouze*
-
+doi: 10.1093/bioinformatics/btaf381  AOP-helpFinder 3.0: from text mining to network visualization of key event relationships, and knowledge integration from multiple sources. Thomas Jaylet, Florence Jornod, Quentin Capdet, Olivier Armant, and Karine Audouze*
 *Corresponding author: Karine Audouze (Email: karine.audouze [at] u-paris.fr)
 
 *for the method(s)*:  
